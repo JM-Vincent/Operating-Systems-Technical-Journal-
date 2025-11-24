@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Server Administration Project</title>
+    <!-- Tailwind CSS for rapid styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter and Fira Code (for that terminal look) -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        terminal: {
+                            bg: '#1e1e1e',
+                            green: '#4af626',
+                            bar: '#333333'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <!-- Logo / Home Link -->
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2 text-xl font-bold font-mono hover:text-green-400 transition">
+                        <i class="fa-solid fa-terminal"></i>
+                        <span>LinuxAdmin_Project</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="index.html" class="bg-gray-700 px-3 py-2 rounded-md text-sm font-medium text-white border-b-2 border-green-500">Home</a>
+                    <a href="week1.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Week 1</a>
+                    <a href="week2.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Week 2</a>
+                    <a href="week3.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Week 3</a>
+                    <a href="week4.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Week 4</a>
+                    <a href="week5.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Week 5</a>
+                    <a href="week6.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Week 6</a>
+                    <a href="week7.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Week 7</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="flex items-center md:hidden">
+                    <button type="button" onclick="toggleMenu()" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900">Home</a>
+                <a href="week1.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 1</a>
+                <a href="week2.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 2</a>
+                <a href="week3.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 3</a>
+                <a href="week4.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 4</a>
+                <a href="week5.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 5</a>
+                <a href="week6.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 6</a>
+                <a href="week7.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 7</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <main class="flex-grow">
+        
+        <!-- Hero Section -->
+        <header class="bg-white shadow-sm border-b border-gray-200">
+            <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h1 class="text-4xl font-bold text-gray-900 tracking-tight">
+                        Headless Linux Configuration
+                    </h1>
+                    <p class="mt-2 text-lg text-gray-600">
+                        System Administration & SSH Mastery
+                    </p>
+                </div>
+                <!-- Decorative Terminal Graphic -->
+                <div class="w-full md:w-1/2 max-w-lg bg-terminal-bg rounded-lg shadow-xl overflow-hidden font-mono text-xs sm:text-sm">
+                    <div class="bg-terminal-bar px-4 py-2 flex items-center space-x-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        <span class="ml-2 text-gray-400">root@server:~</span>
+                    </div>
+                    <div class="p-4 text-gray-300 h-32">
+                        <p><span class="text-terminal-green">root@server:~$</span> whoami</p>
+                        <p>root</p>
+                        <p><span class="text-terminal-green">root@server:~$</span> service ssh status</p>
+                        <p class="text-terminal-green">● ssh.service - OpenBSD Secure Shell server</p>
+                        <p><span class="text-terminal-green">root@server:~$</span> <span class="animate-pulse">_</span></p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Project Overview Section -->
+        <section class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-lg shadow-md p-8 border-l-4 border-blue-600">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                    <i class="fa-solid fa-circle-info text-blue-600 mr-3"></i> Project Overview
+                </h2>
+                <div class="prose prose-lg text-gray-700 leading-relaxed">
+                    <p class="text-lg">
+                        In this project, I will configure a Linux server operating system running headless without a graphical 
+                        interface. All system administration will be performed via command-line interface accessed 
+                        through SSH from a separate workstation system. This enforces command-line proficiency 
+                        whilst developing professional remote administration skills.
+                    </p>
+                    <p class="mt-4 text-base text-gray-500">
+                        The objective is to simulate a real-world enterprise environment where servers are deployed in data centers and managed remotely, ensuring minimal resource overhead and maximum security.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Table of Contents Section -->
+        <section class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 mb-12">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">Table of Contents</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Week 1 -->
+                <a href="week1.html" class="group block bg-white rounded-xl shadow hover:shadow-xl transition duration-300 border border-gray-100 overflow-hidden">
+                    <div class="bg-blue-600 h-2 w-full group-hover:bg-blue-700 transition"></div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-900">Week 1</h3>
+                            <i class="fa-brands fa-linux text-2xl text-gray-400 group-hover:text-blue-600 transition"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-700 mb-2">Installation & Setup</h4>
+                        <p class="text-gray-500 text-sm">Downloading ISOs, initial partitioning, and headless OS installation.</p>
+                    </div>
+                </a>
+
+                <!-- Week 2 -->
+                <a href="week2.html" class="group block bg-white rounded-xl shadow hover:shadow-xl transition duration-300 border border-gray-100 overflow-hidden">
+                    <div class="bg-indigo-600 h-2 w-full group-hover:bg-indigo-700 transition"></div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-900">Week 2</h3>
+                            <i class="fa-solid fa-key text-2xl text-gray-400 group-hover:text-indigo-600 transition"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-700 mb-2">SSH Configuration</h4>
+                        <p class="text-gray-500 text-sm">Generating keys, disabling root login, and securing remote access.</p>
+                    </div>
+                </a>
+
+                <!-- Week 3 -->
+                <a href="week3.html" class="group block bg-white rounded-xl shadow hover:shadow-xl transition duration-300 border border-gray-100 overflow-hidden">
+                    <div class="bg-purple-600 h-2 w-full group-hover:bg-purple-700 transition"></div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-900">Week 3</h3>
+                            <i class="fa-solid fa-users text-2xl text-gray-400 group-hover:text-purple-600 transition"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-700 mb-2">User Management</h4>
+                        <p class="text-gray-500 text-sm">Creating users, managing groups, and sudo privileges.</p>
+                    </div>
+                </a>
+
+                <!-- Week 4 -->
+                <a href="week4.html" class="group block bg-white rounded-xl shadow hover:shadow-xl transition duration-300 border border-gray-100 overflow-hidden">
+                    <div class="bg-pink-600 h-2 w-full group-hover:bg-pink-700 transition"></div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-900">Week 4</h3>
+                            <i class="fa-solid fa-file-shield text-2xl text-gray-400 group-hover:text-pink-600 transition"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-700 mb-2">File Permissions</h4>
+                        <p class="text-gray-500 text-sm">Understanding chmod, chown, and standard Linux directory structure.</p>
+                    </div>
+                </a>
+
+                <!-- Week 5 -->
+                <a href="week5.html" class="group block bg-white rounded-xl shadow hover:shadow-xl transition duration-300 border border-gray-100 overflow-hidden">
+                    <div class="bg-orange-600 h-2 w-full group-hover:bg-orange-700 transition"></div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-900">Week 5</h3>
+                            <i class="fa-solid fa-box-open text-2xl text-gray-400 group-hover:text-orange-600 transition"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-700 mb-2">Package Management</h4>
+                        <p class="text-gray-500 text-sm">Updating repositories, installing software, and managing dependencies.</p>
+                    </div>
+                </a>
+
+                <!-- Week 6 -->
+                <a href="week6.html" class="group block bg-white rounded-xl shadow hover:shadow-xl transition duration-300 border border-gray-100 overflow-hidden">
+                    <div class="bg-green-600 h-2 w-full group-hover:bg-green-700 transition"></div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-900">Week 6</h3>
+                            <i class="fa-solid fa-network-wired text-2xl text-gray-400 group-hover:text-green-600 transition"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-700 mb-2">Networking</h4>
+                        <p class="text-gray-500 text-sm">Static IP configuration, DNS settings, and network troubleshooting.</p>
+                    </div>
+                </a>
+
+                <!-- Week 7 -->
+                <a href="week7.html" class="group block bg-white rounded-xl shadow hover:shadow-xl transition duration-300 border border-gray-100 overflow-hidden md:col-span-2 lg:col-span-3 lg:w-1/3 lg:mx-auto">
+                    <div class="bg-red-600 h-2 w-full group-hover:bg-red-700 transition"></div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-900">Week 7</h3>
+                            <i class="fa-solid fa-shield-halved text-2xl text-gray-400 group-hover:text-red-600 transition"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-700 mb-2">Security & Firewalling</h4>
+                        <p class="text-gray-500 text-sm">Configuring UFW/iptables, log monitoring, and basic hardening.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="mb-4">&copy; 2025 Linux Administration Project. All rights reserved.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white text-2xl transition"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white text-2xl transition"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:email@example.com" class="text-gray-400 hover:text-white text-2xl transition"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple Script for Mobile Menu Toggle -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
