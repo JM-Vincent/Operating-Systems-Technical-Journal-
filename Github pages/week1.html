@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 - Linux Project</title>
+    <!-- Tailwind CSS for rapid styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        terminal: {
+                            bg: '#1e1e1e',
+                            green: '#4af626',
+                            bar: '#333333'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <!-- Logo / Home Link -->
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2 text-xl font-bold font-mono hover:text-green-400 transition">
+                        <i class="fa-solid fa-terminal"></i>
+                        <span>LinuxAdmin_Project</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="index.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Home</a>
+                    <!-- Active Link Styling for Week 1 -->
+                    <a href="week1.html" class="bg-gray-700 px-3 py-2 rounded-md text-sm font-medium text-white border-b-2 border-green-500">Week 1</a>
+                    <a href="week2.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Week 2</a>
+                    <a href="week3.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Week 3</a>
+                    <a href="week4.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Week 4</a>
+                    <a href="week5.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Week 5</a>
+                    <a href="week6.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Week 6</a>
+                    <a href="week7.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Week 7</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="flex items-center md:hidden">
+                    <button type="button" onclick="toggleMenu()" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Home</a>
+                <a href="week1.html" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900">Week 1</a>
+                <a href="week2.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 2</a>
+                <a href="week3.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 3</a>
+                <a href="week4.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 4</a>
+                <a href="week5.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 5</a>
+                <a href="week6.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 6</a>
+                <a href="week7.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 7</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <main class="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- Page Header -->
+        <div class="border-b border-gray-200 pb-5 mb-8">
+            <h1 class="text-3xl font-bold text-gray-900">Week 1: System Planning and Distribution Selection</h1>
+            <p class="mt-2 text-lg text-gray-600">Initial server configuration and OS installation.</p>
+        </div>
+
+        <!-- BLANK CONTENT AREA -->
+        <!-- Start adding your content below this line -->
+        
+        <div class="space-y-8">
+            
+            <!-- Example: Text Section -->
+            
+
+            <!-- Example: Image Section -->
+            <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">System Architecture Diagram</h2>
+                <!-- Replace src="" with your image file path (e.g., images/week1-setup.png) -->
+                <div class="flex justify-center bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-12">
+                    
+                  <img src="System Architecture Diagram.png" alt="Description" class="rounded shadow-lg max-w-full h-auto"> 
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">Distribution selection justification and comparison.</h2>
+                <p class="text-gray-600">
+                    I selected Ubuntu Server 24.04 LTS(long term support) due to the fact 
+                    that this Linux distribution has a excellent balance of modern features, 
+                    extensive support and user-friendliness.
+                </p>
+                <br>
+                <h3 class="text-xl font-semibold mb-4 text-gray-800">Distro justification.</h3>
+                <p class="text-gray-600">
+                    The justification of using my choice of Linux distribution is because of three reasons. 
+                    <br>
+                    One of those reason is the ease of and community support. Ubuntu is notable for its 
+                    user-friendliness. The package management system, apt$, is intuitive, 
+                    and the installation process is straightforward.
+                    <br>
+                    <br>
+                    Moreover, it boasts one of the most extensive online communities, 
+                    ensuring the availability of comprehensive documentation, tutorials, 
+                    and troubleshooting guides. This is a significant advantage for a project environment.
+                    <br>
+                    <br>
+                    The second reason why I chose Ubuntu is because of the package availability. 
+                    The Ubuntu repositories are extensive and contain software that is up to date. 
+                    This allows the straightforward installation and configuration of new services, 
+                    thus eliminating the need for source complication or the management of sophisticated dependencies.
+                    <br>
+                    <br>
+                    And last reason why I chose Ubuntu is because of the long term support, 
+                    which I chose the LTS release of the distro guarantees a stable platform that 
+                    will receive security updates for a period of five more years. 
+                    This is similar to a real-world production environment in which stability 
+                    and security are of the utmost importance. 
+                </p>
+                <br>
+                <br>
+                <h3 class="text-xl font-semibold mb-4 text-gray-800">Distro comparison.</h3>
+                <p class="text-gray-600">
+                Ubuntu compared to alternative like Alma Linux, Rocky Linux, or Debian is a much better choice. 
+                Both Alma Linux and Rocky Linux distros have found been found to exhibit excellent stability 
+                and are recognised for their compatibility with Red Hat Enterprise Linux(RHEL), 
+                with a one-to-one ratio of compatibility. Theses devices 
+                are now considered a standard component in numerous corporate environments. However, 
+                it should be noted that the package manager utilised by these distributions, namely (DNF/YUM) 
+                is different while the software repositories maintained by these distros are generally stable, 
+                they are not as current as Ubuntu's. The accessibilities of Ubuntu ease of use and a large 
+                community support were more important.
+                <br>
+                <br>
+                As for Debian, while it is known that the distro is the 'upstream' distribution for Ubuntu, 
+                and that is renowned for its rock-solid stability. However, its stable branch frequently utilises older, 
+                more thoroughly tested versions of software. Ubuntu LTS represents a satisfactory compromise by being 
+                based on Debian's stable core, yet offering more recent packages.
+
+                </p>
+                <br>
+                <br>
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">Workstation choice justification.</h2>
+                <p class="text-gray-600">
+                    The justification of using my choice of workstation option is because of four reasons.
+                    <br>
+                    <br>
+                    One the reason of my choice of workstation option is because of the Graphical User Interface(GUI). 
+                    In contrast to the server, which operates in a command-line-only (CLI) mode to conserve resources, 
+                    the workstation is installed with a comprehensive desktop environment (e.g. GNOME). 
+                    This distribution is equipped with a range of essential tools for system administrators, 
+                    including a web browser (for testing a web server), a visual text editor, and various graphical applications.
+                    <br>
+                    <br>
+                    The second reason is because of the client-side tools, which The workstation is the optimal location for the
+                    installation and execution of client-side software. For instance, the virtual machine could be employed to 
+                    test an SSH connection to the server or to access a database hosted on the server.
+                    <br>
+                    <br>
+                    The third reason is because of the network segregation which the utilisation of a dedicated workstation virtual 
+                    machine (VM) facilitates the emulation of a realistic network environment. The administrator does not have direct 
+                    access to the server; rather, they utilise a network connection, which is widely regarded as a best practice for 
+                    enhancing security and management.
+                    <br>
+                    <br>
+                    The last reason is because of resource allocation, which the workstation has been configured in a manner that 
+                    differs from that of the server. While it may have more RAM allocated to support the GUI, it does not require 
+                    the same amount of persistent disk space as a server.
+                </p>
+
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">Distro and host PC network configuration.</h2>
+                <br>
+
+                <style>
+                    table {
+                    font-family: Inter, sans-serif;
+                    border-collapse: collapse;
+                    width: 100%;
+                    }
+
+                    td, th {
+                    border: 1px solid #dddddd;
+                    text-align: left;
+                    padding: 8px;
+                    }
+
+                    tr:nth-child(even) {
+                    background-color: rgb(167, 167, 167);
+                    }
+                </style>
+                <table>
+                    <tr>
+                        <th>Device</th>
+                        <th>Hostname</th>
+                        <th>IP Address</th>
+                        <th>Subnet Mask</th>
+                        <th>Gateway</th>
+                    </tr>
+                    <tr>
+                        <td>Host PC</td>
+                        <td>(My PC)</td>
+                        <td>192.168.56.1</td>
+                        <td>255.255.255.0</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td>Server VM</td>
+                        <td>server01</td>
+                        <td>192.168.56.10</td>
+                        <td>255.255.255.0</td>
+                        <td>192.168.56.1</td>
+                    </tr>
+                    <tr>
+                        <td>Workstation VM</td>
+                        <td>workstation01</td>
+                        <td>192.168.56.11</td>
+                        <td>255.255.255.0</td>
+                        <td>192.168.56.1</td>
+                    </tr>
+                    
+                </table>
+                <br>
+                <br>
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">System specification.</h2>
+                <br>
+                <table>
+                    <tr>
+                        <th>Device</th>
+                        <th>Command</th>
+                        <th>Result</th>   
+                    </tr>
+                    <tr>
+                        <th>Server VM</th>
+                        <th>uname -a</th>
+                        <th><img src="Server VM uname -a result.png" alt="Server VM command result"> </th>
+                    </tr>
+                    <tr>
+                        <th>Workstation VM</th>
+                        <th>uname -a</th>
+                        <th><img src="WorkstationVM uname -a result.png" alt="Workstation VM command result"></th>
+                    </tr>
+                    <tr>
+                        <th>Server VM</th>
+                        <th>free -h</th>
+                        <th><img src="Server VM free -h.png" alt="Server VM command result"></th>
+                    </tr>
+                    <tr>
+                        <th>Workstation VM</th>
+                        <th>free -h</th>
+                        <th><img src="Workstation VM free -h.png" alt="Workstation VM command result"></th>
+                    </tr>
+                    <tr>
+                        <th>Server VM</th>
+                        <th>df -h</th>
+                        <th><img src="Server VM df -h.png" alt="Server VM command result"></th>
+                    </tr>
+                    <tr>
+                        <th>Workstation VM</th>
+                        <th>df -h</th>
+                        <th><img src="WorkstationVM df -h.png" alt="Workstation VM command result"></th>
+                    </tr>
+                    <tr>
+                        <th>Server VM</th>
+                        <th>ip addr</th>
+                        <th><img src="Server VM ip addr.png" alt="Server VM command result"></th>
+                    </tr>
+                    <tr>
+                        <th>Workstation VM</th>
+                        <th>ip addr</th>
+                        <th><img src="WorkstationVM ip addr.png" alt="Workstation VM command result"></th>
+                    </tr>
+                    <tr>
+                        <th>Server VM</th>
+                        <th>lsb_release -a</th>
+                        <th><img src="Server VM lsb_release -a.png" alt="Server VM command result"></th>
+                    </tr>
+                    <tr>
+                        <th>Workstation VM</th>
+                        <th>lsb_release -a</th>
+                        <th><img src="Workstation VM lsb_release -a.png" alt="Workstation VM command result"></th>
+                    </tr>
+
+                </table>
+
+                
+
+
+                
+            </div>
+                
+            
+
+            
+
+        </div>
+
+        <!-- End of your content -->
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="mb-4">&copy; 2023 Linux Administration Project. All rights reserved.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white text-2xl transition"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white text-2xl transition"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:email@example.com" class="text-gray-400 hover:text-white text-2xl transition"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
