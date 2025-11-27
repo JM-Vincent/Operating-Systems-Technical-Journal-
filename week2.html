@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 2 - Linux Project</title>
+    <!-- Tailwind CSS for rapid styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        terminal: {
+                            bg: '#1e1e1e',
+                            green: '#4af626',
+                            bar: '#333333'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <!-- Logo / Home Link -->
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2 text-xl font-bold font-mono hover:text-green-400 transition">
+                        <i class="fa-solid fa-terminal"></i>
+                        <span>LinuxAdmin_Project</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="index.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Home</a>
+                    <!-- Active Link Styling for Week 1 -->
+                     <a href="week1.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Week 1</a>
+                    <a href="week2.html" class="bg-gray-700 px-3 py-2 rounded-md text-sm font-medium text-white border-b-2 border-green-500">Week 2</a>
+                    <a href="week3.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Week 3</a>
+                    <a href="week4.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Week 4</a>
+                    <a href="week5.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Week 5</a>
+                    <a href="week6.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Week 6</a>
+                    <a href="week7.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Week 7</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="flex items-center md:hidden">
+                    <button type="button" onclick="toggleMenu()" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Home</a>
+                <a href="week1.html" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900">Week 1</a>
+                <a href="week2.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 2</a>
+                <a href="week3.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 3</a>
+                <a href="week4.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 4</a>
+                <a href="week5.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 5</a>
+                <a href="week6.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 6</a>
+                <a href="week7.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 7</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <main class="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- Page Header -->
+        <div class="border-b border-gray-200 pb-5 mb-8">
+            <h1 class="text-3xl font-bold text-gray-900">Week 2: Security Planning and Testing Methodology</h1>
+            <p class="mt-2 text-lg text-gray-600">Design a security baseline and performance testing methodology.  
+            .</p>
+        </div>
+
+        <!-- BLANK CONTENT AREA -->
+        <!-- Start adding your content below this line -->
+        
+        <div class="space-y-8">
+            
+            <!-- Example: Text Section -->
+            
+
+            
+
+            
+
+            <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">Performance testing plan.</h2>
+                <br>
+
+                <style>
+                    table {
+                    font-family: Inter, sans-serif;
+                    border-collapse: collapse;
+                    width: 100%;
+                    }
+
+                    td, th {
+                    border: 1px solid #dddddd;
+                    text-align: left;
+                    padding: 8px;
+                    }
+
+                    tr:nth-child(even) {
+                    background-color: rgb(167, 167, 167);
+                    }
+                </style>
+
+                <table>
+                    <tr>
+                        <th>Step</th>
+                        <th>Action</th>
+                        <th>Tool used</th>
+                        <th>Expected result/+ Metric</th>
+                    </tr>
+                    <tr>
+                        <th>1)Peperation</th>
+                        <th>Installing the  necessary tools on Server VM.</th>    
+                        <th> 'ssh'(from Workstation). 'Sudo apt install htop stress'(on server)</th>
+                        <th>The tools are installed and ready to run.</th>
+                    </tr>
+                    <tr>
+                        <th>2)Monitoring</th><th>Remotely connect to the Server VM from
+                             the Workstation VM and start the performance monitor.</th>
+                        <th>'ssh ash@192.168.56.10'(on the workstation).(on Server, via SSH) </th>
+                        <th>'htop' is running, showing real-time server stats.</th>
+                    </tr>
+                    <tr>
+                        <th>3)Baseline</th>
+                        <th>With the server idle (only `htop` running), observe and record the system's normal state.</th>
+                        <th>`htop` (on Workstation)</th>
+                        <th>**Metric:** Record idle CPU % (e.g., 0-2%), Memory usage (e.g., 250M / 2.0G), and Load Average.</th>
+                    </tr>
+                    <tr>
+                        <th>4)Test 1: CPU Load</th>
+                        <th>Apply a 1-core CPU stress test for 60 seconds.</th>
+                        <th>`stress --cpu 1 --timeout 60s` (on Server)</th>
+                        <th>Observe: One CPU core in `htop` will spike to **100%**. The `stress` process will appear at the top of the list.</th>
+                    </tr>
+                    <tr>
+                        <th>5)Test 2: Memory Load</th>
+                        <th>Apply a 512MB memory stress test for 60 seconds.</th>
+                        <th>`stress --vm 1 --vm-bytes 512M --timeout 60s` (on Server)</th>
+                        <th>**Observe:** The `htop` memory bar will increase by 512MB. The `stress` process will show high memory usage.</th>
+                    </tr>
+                    <tr>
+                        <th>6)Documentation</th>
+                        <th>Save screenshots from steps 3, 4, and 5 and note any anomalies (e.g., swap usage, system lag).</th>
+                        <th>Screenshot tool.</th>
+                        <th>A visual record of the server's performance under baseline, CPU load, and memory load conditions.</th>
+                    </tr>
+                </table>
+                
+                <br>
+                <br>
+            </div>   
+            <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">Security configuration checklist.</h2>
+                <br>
+                <table>
+                    <tr>
+                        <th>Category</th>
+                        <th>Task</th>
+                        <th>Configuration Command / Check</th>
+                    </tr>
+                    <tr>
+                        <th>SSH Hardening</th>
+                        <th>1) Disable root login
+                            2) (Recommended) Disable password login
+                            3) Restart SSH service
+                        </th>
+                        <th>Edit '/etc/ssh/sshd_config' and set 'PermitRootLogin no' |
+                            Edit `/etc/ssh/sshd_config` and set `PasswordAuthentication no` (Requires setting up SSH keys first) |
+                            `sudo systemctl restart sshd`
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Firewall</th>
+                        <th>1) Install 'ufw'
+                            2) Deny all incoming traffic
+                            3) Allow all outgoing traffic
+                            4) Allow SSH connections
+                            5) Enable the firewall
+                        </th>
+                     <th>
+                        `sudo systemctl restart sshd` | 
+                        `sudo apt install ufw` |
+                        `sudo ufw default deny incoming` |
+                        `sudo ufw default allow outgoing` |
+                        `sudo ufw allow ssh` (or `sudo ufw allow 22/tcp`) |
+                        `sudo ufw enable` (Type 'y' to proceed) </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            Mandatory Access Control
+                        </th>
+                        <th>1) Check AppArmor status
+                            2) (Action)
+                        </th>
+                        <th>`sudo aa-status` |
+                            Ensure AppArmor is active and profiles are in enforce mode (A default on Ubuntu).
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                        Automatic Updates
+                        </th>
+                        <th>1) Install the package
+                            2) Configure for security updates
+                        </th>
+                        <th>`sudo apt install unattended-upgrades` | `sudo dpkg-reconfigure -plow unattended-upgrades` (Select 'Yes')</th>
+                    </tr>
+                    <tr>
+                        <th>User Privileges</th>
+                        <th>1) Confirm root account is locked
+                            2) Review `sudo` group members
+                        </th>
+                        <th>`sudo passwd -S root` (Should show 'L' for locked) | `getent group sudo` (Should only show your user, e.g., `ash`)</th>
+                    </tr>
+                    <tr>
+                        <th>Network Security</th>
+                        <th>1.)Check for open ports
+                            2) (Action)
+                        </th>
+                        <th>`sudo ss -tulpn` | 
+                            Verify that the only listening service is `sshd` (port 22). No other ports should be open.
+                        </th>
+                    </tr>
+
+                    </table>
+            
+                      
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">Threat model.</h2>
+                <br>
+                <table>
+                    <tr>
+                        <th>Threat</th>
+                        <th>Description</th>
+                        <th>Mitigation Strategy</th>
+                    </tr>
+                    <tr>
+                        <th>Brute-Force Password Attack</th>
+                        <th>If someone tries to log in to the 
+                            Server VM on the host-only network 
+                            (e.g. if the Workstation VM has been 
+                            compromised), they will do so by guessing 
+                            the admin(me) user's password thousands of times.</th>
+                        <th>1) Disable Password Authentication: 
+                            Edit '/etc/ssh/sshd_config' on the server to set 
+                            'PasswordAuthentication no'. This makes password guessing 
+                            impossible and forces the use of more secure SSH keys. 
+
+                            2) Firewall: The firewall is set up so that it only allows SSH connections.
+
+                            3) Install Fail2Ban: Use 'sudo apt install fail2ban' 
+                            to automatically ban IP addresses that have too many 
+                            failed login attempts.
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            Compromised Workstation (Pivot Attack)
+                        </th>
+                        <th>The 'Workstation VM' would be infected with malware 
+                            (e.g. from a web browser). The attacker now has a "trusted" 
+                            position inside the private network to attack the server.
+                        </th>
+                        <th>1) Server Firewall (ufw): The server's firewall must be 
+                            switched on and set up so that it blocks all traffic by 
+                            default, and only allows SSH (sudo ufw allow ssh). 
+                            It should not trust the workstation, even though it is 
+                            on the same network.
+
+                            2. Least Privilege: The admin(me again) user shouldn't 
+                            have passwordless 'sudo' access. Requires a SSH key or 
+                            just a password to login .
+
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>VM Escape</th>
+                        <th>A sophisticated attacker exploits a security vulnerability 
+                            in the VirtualBox software itself. This allows them to 
+                            "escape" the 'Server VM' and gain access to your main Host PC.
+                        </th>
+                        <th>1. Host Patching: Keeping the VirtualBox application updated to the 
+                            latest version. This is the primary defense, as developers patch these vulnerabilities.
+
+                            2. Guest Patching: Keeping the `Server VM`'s operating system 
+                            and kernel updated (`sudo apt upgrade`) to patch any 
+                            vulnerabilities in the guest-level drivers.
+                        </th>
+                    </tr>
+                    </table>
+            </div>
+                
+            
+
+            
+
+        </div>
+
+        <!-- End of your content -->
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="mb-4">&copy; 2025 Linux Administration Project. All rights reserved.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white text-2xl transition"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white text-2xl transition"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:email@example.com" class="text-gray-400 hover:text-white text-2xl transition"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

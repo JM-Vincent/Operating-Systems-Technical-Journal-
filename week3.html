@@ -136,41 +136,194 @@
                     <tr>
                         <th>CPU intensive</th>
                         <th>Sysbench (CPU mode)</th>
-                        <th>Sysbench is widely regarded as an industry-standard tool. 
-                            In CPU mode, the device calculates prime numbers, 
-                            thereby forcing the processor to run at maximum capacity. 
-                            This is ideal for testing thermal limits and scheduler performance.</th>
+                        <th> This is ideal for testing thermal limits and scheduler performance,
+                            because it forces the CPU to run at 100% utilisation by calculating prime numbers.</th>
                     </tr>
                     <tr>
-                        <th>RAM intensive</th><th>Stress-ng</th><th>.</th>
+                        <th>RAM intensive</th><th>Stress-ng</th><th>Stress-ng effectively simulating a
+                             memory leak or a heavy database operation. </th>
                     </tr>
                     <tr>
                         <th>I/O intensive</th>
                         <th>Sysbench (FileIO mode)</th>
-                        <th>.</th>
+                        <th>We reuse sysbench here because its "FileIO" mode simulates random read/write operations.</th>
                     </tr>
                     <tr>
                         <th>Network intensive</th>
                         <th>iPerf3</th>
-                        <th>.</th>
+                        <th>iperf3 is the standard tool for measuring active bandwidth.</th>
                     </tr>
                     <tr>
                         <th>Server Application</th>
                         <th>Nginx (Web Server)</th>
-                        <th>.</th>
+                        <th>Nginx is a high-performance web server. It represents a real-world 
+                            "Server Application" workload. Nginx tests how the system handles 
+                            concurrent connections and file serving.</th>
                     </tr>
                 </table>
                 
                 <br>
                 <br>
-                
-                <br>
-                
-                
-
-
-                
             </div>
+
+            <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-800">Installation Documentation.</h2>
+                    <br>
+                    <!-- Terminal Command Block Start -->
+                    <div class="w-full rounded-lg shadow-xl overflow-hidden my-8 font-mono text-sm border border-gray-700 bg-terminal-bg">
+                        <!-- Terminal Header -->
+                        <div class="bg-slate-800 px-4 py-2 flex items-center gap-2 border-b border-gray-700">
+                            <div class="w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-600 transition"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500 hover:bg-green-600 transition"></div>
+                            <span class="ml-2 text-gray-400 text-xs select-none">workstation VM:~</span>
+                        </div>
+                    
+                        <!-- Terminal Content -->
+                        <div class="bg-slate-900 p-6 text-gray-100 leading-relaxed overflow-x-auto">
+                        
+                            <!-- Command 1 -->
+                            <div class="mb-2">
+                                <span class="text-green-400 font-bold mr-2">workstation01:~$</span>
+                                <span>ssh ash@192.168.56.10</span>
+                            </div>
+
+                            <!-- Command 2 -->
+                            <div class="mb-2">
+                                <span class="text-green-400 font-bold mr-2">workstation01:~$</span>
+                                <span>sudo apt update</span>
+                            </div>
+
+                            <!-- Command 3 -->
+                            <div class="mb-2">
+                                <span class="text-green-400 font-bold mr-2">workstation01:~$</span>
+                                <span>sudo apt install sysbench stress-ng iperf3 nginx -y</span>
+                            </div>
+
+                            <!-- Command 4 -->
+                            <div class="mb-2">
+                                <span class="text-green-400 font-bold mr-2">workstation01:~$</span>
+                                <span>sysbench --version</span>
+                            </div>
+
+                            <!-- Command 5 -->
+                            <div class="mb-2">
+                                <span class="text-green-400 font-bold mr-2">workstation01:~$</span>
+                                <span>stress-ng --version</span>
+                            </div>
+
+                            <!-- Command 6 -->
+                            <div class="mb-2">
+                                <span class="text-green-400 font-bold mr-2">workstation01:~$</span>
+                                <span>iperf3 --version</span>
+                            </div>
+
+                            <!-- Command 7 (Active) -->
+                            <div class="flex flex-wrap">
+                                <span class="text-green-400 font-bold mr-2">workstation01:~$</span>
+                                <span>sudo systemctl status nginx</span>
+                                <span class="w-2.5 h-5 bg-gray-400 ml-1 animate-pulse"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+                    
+            
+            <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">Expected Resource Profiles.</h2>
+                <br>
+                <table>
+                    <tr>
+                        <th>Application</th>
+                        <th>Resource target</th>
+                        <th>Expected resource profile</th>
+                    </tr>
+                    <tr>
+                        <th>Sysbench (CPU)</th>
+                        <th>CPU cores</th>
+                        <th>100% on all assigned cores.</th>
+                    </tr>
+                    <tr>
+                        <th>Stress-ng</th>
+                        <th>RAM</th>
+                        <th>RAM usage will fill up to the limit we set (e.g. 90%).</th>
+                    </tr>
+                    <tr>
+                        <th>Sysbench (FileIO)</th>
+                        <th>Disk I/O</th>
+                        <th>CPU usage might be low, but "Load Average" will be high.</th>
+                    </tr>
+                    <tr>
+                        <th>iPerf3</th>
+                        <th>Network Card</th>
+                        <th>Network traffic on enp0s8 will spike to near 1Gbps (or higher depending on virtualization).
+                            CPU usage may rise slightly to process the network packets.
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Nginx</th>
+                        <th>Mixed</th>
+                        <th>Low idle usage. Moderate CPU and RAM spikes during requests.
+                            Logs will be generated in /var/log/nginx/.
+                        </th>
+                    </tr>
+                </table>
+
+
+            </div>
+            <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">Monitoring Strategy explaining measurement.</h2>
+                <br>
+                <p class="text-gray-600">For the controller I'll open one terminal on the Workstation SSH'd into the Server to run the stress command.
+                    While for the Monitor I'll open a second terminal on the Workstation SSH'd into the Server to watch the metrics.</p>
+                <br>
+                <table>
+                    <tr>
+                        <th>Workload</th>
+                        <th>Primary monitoring tool</th>
+                        <th>Metric to moitor.</th>
+                    </tr>
+                    <tr>
+                        <th>General / CPU</th>
+                        <th>Sysbench (CPU mode)</th>
+                        <th> Look at the colored bars at the top. Green = User processes. 
+                            Red = Kernel processes. Watch for the bars hitting 100%.</th>
+                    </tr>
+                    <tr>
+                        <th>Memory</th><th>htop or free -h</th><th>In htop, watch the Mem bar. 
+                            Watch the Swp bar to see if it spills over to disk. </th>
+                    </tr>
+                    <tr>
+                        <th>Disk I/O</th>
+                        <th>vmstat 1</th>
+                        <th>Run vmstat 1. Watch the wa column (Wait). 
+                            If this number is high, your disk is the bottleneck.
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Network</th>
+                        <th>nload or ip -s link</th>
+                        <th>(Optional install: sudo apt install nload). 
+                            This shows a real-time graph of incoming/outgoing traffic speed.</th>
+                    </tr>
+                </table>
+            </div>
+               
+            
+                        
+                    
+                
+
+                
+                
+                
+                
+                
+
+
+                
+            
                 
             
 
