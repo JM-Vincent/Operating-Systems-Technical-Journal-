@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 6 - Linux Project</title>
+    <!-- Tailwind CSS for rapid styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        terminal: {
+                            bg: '#1e1e1e',
+                            green: '#4af626',
+                            bar: '#333333'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <!-- Logo / Home Link -->
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2 text-xl font-bold font-mono hover:text-green-400 transition">
+                        <i class="fa-solid fa-terminal"></i>
+                        <span>Operating Systems_Coursework</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="index.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Home</a>
+                    <!-- Active Link Styling for Week 1 -->
+                     <a href="week1.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Week 1</a>
+                    <a href="week2.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Week 2</a>                    
+                    <a href="week3.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Week 3</a>
+                    <a href="week4.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Week 4</a>
+                    <a href="week5.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Week 5</a>
+                    <a href="week6.html" class="bg-gray-700 px-3 py-2 rounded-md text-sm font-medium text-white border-b-2 border-green-500">Week 6</a>
+                    <a href="week7.html" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 transition">Week 7</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="flex items-center md:hidden">
+                    <button type="button" onclick="toggleMenu()" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Home</a>
+                <a href="week1.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 1</a>
+                <a href="week2.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 2</a>
+                <a href="week3.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 3</a>
+                <a href="week4.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 4</a>
+                <a href="week5.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 5</a>
+                <a href="week6.html" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900">Week 6</a>
+                <a href="week7.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 7</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <main class="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- Page Header -->
+        <div class="border-b border-gray-200 pb-5 mb-8">
+            <h1 class="text-3xl font-bold text-gray-900">Week 6: Performance Evaluation and Analysis.</h1>
+            <p class="mt-2 text-lg text-gray-600">Execute detailed performance testing and analyse operating system behaviour under different 
+            workloads.</p>
+        </div>
+
+        <!-- BLANK CONTENT AREA -->
+        
+        
+        <div class="space-y-8">
+            
+            
+            
+
+            
+
+            
+
+            <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">Install Measurement Tools & Testing baseline.</h2>
+                <br>
+                <iframe src="https://drive.google.com/file/d/1dx0KOP6fCxJAEEOc6panVeddnOUdRPGa/preview" width="640" height="480"></iframe>
+                <br>
+                <br>
+                <p class="mt-2 text-lg text-gray-600">In this video, the first part, I was installing tools that would measure the service response time, CPU, RAM usage, etc.</p>
+                
+                <p class="mt-2 text-lg text-gray-600">In the final part, I installed fail2ban and verify if it running. Next I check the status of SSH Jail</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">Network Performance Analysi & Web Application Load Test.</h2>
+                <br>
+                <iframe src="https://drive.google.com/file/d/1rLG9tcTO1h8HR0QAwyy-pIx-iJ-1_VJe/preview" width="640" height="480" allow="fullscreen" 
+                allowfullscreen="true"></iframe>
+                <br>
+                <br>
+                <p class="mt-2 text-lg text-gray-600">I then did a network performance analysis by setting the Server VM to "listen" for the speed test first. </p>
+                <p class="mt-2 text-lg text-gray-600">Next on the workstation VM, I enter a command in the terminal to have the vm act as the "sender". </p>
+                <p class="mt-2 text-lg text-gray-600">I ran a command that simulates 100 user sending 10,000 requests to the server vm.</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">Optimizing the Server VM.</h2>
+                <br>
+                <iframe src="https://drive.google.com/file/d/1sziamF-EKZIZfxDDW2qpxVQKc8QVPcc5/preview" width="640" height="480" allow="fullscreen" 
+                allowfullscreen="true"></iframe>
+                <br>
+                <br>
+                <p class="mt-2 text-lg text-gray-600">So one of the improvements was when I ran a command to keep the data in faster Ram longer before sending it to the disk.</p>
+                <p class="mt-2 text-lg text-gray-600">The other improvements was doubling the limit of Nginx to increace number of connections can be handled</p>
+                <p class="mt-2 text-lg text-gray-600">After the Optimizations, I ran a command to test the web load to see if the Requests per second goes up and Time per requests goes down.</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">Performance data table.</h2>
+                <br>
+                <style>
+                    table {
+                    font-family: Inter, sans-serif;
+                    border-collapse: collapse;
+                    width: 100%;
+                    }
+
+                    td, th {
+                    border: 1px solid #dddddd;
+                    text-align: left;
+                    padding: 8px;
+                    }
+
+                    tr:nth-child(even) {
+                    background-color: rgb(167, 167, 167);
+                    }
+                </style>
+                <table>
+                    <tr>
+                        <th>Metric </th>
+                        <th>Tool used</th>
+                        <th>Baseline(idle)</th>
+                        <th>Load (Before Optimization)</th>
+                        <th>Load (After Optimization)</th>
+                    </tr>
+                    <tr>
+                        <td>CPU Usage</td>
+                        <td>htop</td>
+                        <td>0.5%</td>
+                        <td>100%</td>
+                        <td>100%</td>
+                    </tr>
+                    <tr>
+                        <td>Memory Usage</td><td>htop</td><td>260 MB</td><td>~450 MB</td><td>~440 MB</td>
+
+                    </tr>
+                    <tr>
+                        <td>Network Latency</td><td>ping</td><td>0.833 ms</td><td>69.44 ms</td><td>84.400 ms</td>
+
+                    </tr>
+                    <tr>
+                        <td>Web Requests/Sec</td><td>ab</td><td>N/A</td><td>1440.08 req/sec</td><td>1184.83</td>
+
+                    </tr>
+                    <tr>
+                        <td>Response Time</td><td>ab</td><td>N/A</td><td>1440.08 req/sec</td><td>84.40ms</td>
+
+                    </tr>
+                    <tr>
+                        <td>Throughput</td><td>iperf3</td><td>0 Gbps</td><td>1.2 Gbps</td><td>1.25 Gbps</td>
+
+                    </tr>
+                </table>
+                <br>
+                <p class="mt-2 text-lg text-gray-600">The reason why the Request per second and Time per request were not better,
+                     because of the resource contention on the host PC. The Nginx connections 
+                     increased to 1024 increased the memory overhead per connection, inwhich the a resource-constrained 
+                     VM environment, caused slightly higher latency (Context Switching) rather than improved throughput ).</p>
+                
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">Performance visualisations</h2>
+                <!-- Replace src="" with your image file path (e.g., images/week1-setup.png) -->
+                <div class="flex justify-center bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-12">
+                    
+                  <img src="OS W6 graph.png" alt="Description" class="rounded shadow-lg max-w-full h-auto"> 
+                </div>
+            </div>
+
+            
+               
+
+            <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">Critical reflection.</h2>
+                <br>
+                <p class="text-gray-600">In the sixth phase, was the second most challeging.
+                    I attempted to tune the server for higher loads, but the results showed a 
+                    slight performance regression (1440 req/sec down to 1184 req/sec). What I learnt was 
+                    that simply increasing limits (like connections) increases memory overhead, 
+                    which can backfire if the underlying hardware (or VM allocation) is constrained.
+                    I understood that optimisations is about finding the right balance for the specific hardware available.
+                </p>
+            </div>
+
+                
+                
+                
+
+            
+               
+            
+                        
+                    
+                
+
+                
+                
+                
+                
+                
+
+
+                
+            
+                
+            
+
+            
+
+        </div>
+
+        <!-- End of content -->
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="mb-4">&copy; 2025 Operating System Coursework. All rights reserved.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://github.com/JM-Vincent?tab=overview&from=2025-12-01&to=2025-12-17" class="text-gray-400 hover:text-white text-2xl transition"><i class="fa-brands fa-github"></i></a>
+                
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

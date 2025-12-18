@@ -41,7 +41,7 @@
                 <div class="flex items-center">
                     <a href="index.html" class="flex items-center space-x-2 text-xl font-bold font-mono hover:text-green-400 transition">
                         <i class="fa-solid fa-terminal"></i>
-                        <span>LinuxAdmin_Project</span>
+                        <span>Operating Systems_Coursework</span>
                     </a>
                 </div>
 
@@ -71,9 +71,9 @@
         <div id="mobile-menu" class="hidden md:hidden bg-slate-800">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Home</a>
-                <a href="week1.html" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900">Week 1</a>
+                <a href="week1.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 1</a>
                 <a href="week2.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 2</a>
-                <a href="week3.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 3</a>
+                <a href="week3.html" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900">Week 3</a>
                 <a href="week4.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 4</a>
                 <a href="week5.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 5</a>
                 <a href="week6.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Week 6</a>
@@ -88,7 +88,7 @@
         <!-- Page Header -->
         <div class="border-b border-gray-200 pb-5 mb-8">
             <h1 class="text-3xl font-bold text-gray-900">Week 3: Application Selection for Performance Testing</h1>
-            <p class="mt-2 text-lg text-gray-600">Select applications representing different workload 
+            <p class="mt-2 text-lg text-gray-600">Selecting applications representing different workload 
                 types for performance evaluation. 
             .</p>
         </div>
@@ -134,45 +134,210 @@
                         <th>justification</th>
                     </tr>
                     <tr>
-                        <th>CPU intensive</th>
-                        <th>Sysbench (CPU mode)</th>
-                        <th>Sysbench is widely regarded as an industry-standard tool. 
-                            In CPU mode, the device calculates prime numbers, 
-                            thereby forcing the processor to run at maximum capacity. 
-                            This is ideal for testing thermal limits and scheduler performance.</th>
+                        <td>CPU intensive</td>
+                        <td>Sysbench (CPU mode)</td>
+                        <td> This is ideal for testing thermal limits and scheduler performance,
+                            because it forces the CPU to run at 100% utilisation by calculating prime numbers.</td>
                     </tr>
                     <tr>
-                        <th>RAM intensive</th><th>Stress-ng</th><th>.</th>
+                        <td>RAM intensive</td><td>Stress-ng</td><td>Stress-ng effectively simulating a
+                             memory leak or a heavy database operation. </td>
                     </tr>
                     <tr>
-                        <th>I/O intensive</th>
-                        <th>Sysbench (FileIO mode)</th>
-                        <th>.</th>
+                        <td>I/O intensive</td>
+                        <td>Sysbench (FileIO mode)</td>
+                        <td>We reuse sysbench here because its "FileIO" mode simulates random read/write operations.</td>
                     </tr>
                     <tr>
-                        <th>Network intensive</th>
-                        <th>iPerf3</th>
-                        <th>.</th>
+                        <td>Network intensive</td>
+                        <td>iPerf3</td>
+                        <td>iperf3 is the standard tool for measuring active bandwidth.</td>
                     </tr>
                     <tr>
-                        <th>Server Application</th>
-                        <th>Nginx (Web Server)</th>
-                        <th>.</th>
+                        <td>Server Application</td>
+                        <td>Nginx (Web Server)</td>
+                        <td>Nginx is a high-performance web server. It represents a real-world 
+                            "Server Application" workload. Nginx tests how the system handles 
+                            concurrent connections and file serving.</td>
                     </tr>
                 </table>
                 
                 <br>
                 <br>
-                
-                <br>
-                
-                
-
-
-                
             </div>
+
+            <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-800">Installation Documentation.</h2>
+                    <br>
+                    <!-- Terminal Command Block Start -->
+                    <div class="w-full rounded-lg shadow-xl overflow-hidden my-8 font-mono text-sm border border-gray-700 bg-terminal-bg">
+                        <!-- Terminal Header -->
+                        <div class="bg-slate-800 px-4 py-2 flex items-center gap-2 border-b border-gray-700">
+                            <div class="w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-600 transition"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500 hover:bg-green-600 transition"></div>
+                            <span class="ml-2 text-gray-400 text-xs select-none">workstation VM:~</span>
+                        </div>
+                    
+                        <!-- Terminal Content -->
+                        <div class="bg-slate-900 p-6 text-gray-100 leading-relaxed overflow-x-auto">
+                        
+                            <!-- Command 1 -->
+                            <div class="mb-2">
+                                <span class="text-green-400 font-bold mr-2">workstation01:~$</span>
+                                <span>ssh ash@192.168.56.10</span>
+                            </div>
+
+                            <!-- Command 2 -->
+                            <div class="mb-2">
+                                <span class="text-green-400 font-bold mr-2">workstation01:~$</span>
+                                <span>sudo apt update</span>
+                            </div>
+
+                            <!-- Command 3 -->
+                            <div class="mb-2">
+                                <span class="text-green-400 font-bold mr-2">workstation01:~$</span>
+                                <span>sudo apt install sysbench stress-ng iperf3 nginx -y</span>
+                            </div>
+
+                            <!-- Command 4 -->
+                            <div class="mb-2">
+                                <span class="text-green-400 font-bold mr-2">workstation01:~$</span>
+                                <span>sysbench --version</span>
+                            </div>
+
+                            <!-- Command 5 -->
+                            <div class="mb-2">
+                                <span class="text-green-400 font-bold mr-2">workstation01:~$</span>
+                                <span>stress-ng --version</span>
+                            </div>
+
+                            <!-- Command 6 -->
+                            <div class="mb-2">
+                                <span class="text-green-400 font-bold mr-2">workstation01:~$</span>
+                                <span>iperf3 --version</span>
+                            </div>
+
+                            <!-- Command 7 (Active) -->
+                            <div class="flex flex-wrap">
+                                <span class="text-green-400 font-bold mr-2">workstation01:~$</span>
+                                <span>sudo systemctl status nginx</span>
+                                <span class="w-2.5 h-5 bg-gray-400 ml-1 animate-pulse"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+                    
+            
+            <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">Expected Resource Profiles.</h2>
+                <br>
+                <table>
+                    <tr>
+                        <th>Application</th>
+                        <th>Resource target</th>
+                        <th>Expected resource profile</th>
+                    </tr>
+                    <tr>
+                        <td>Sysbench (CPU)</td>
+                        <td>CPU cores</td>
+                        <td>100% on all assigned cores.</td>
+                    </tr>
+                    <tr>
+                        <td>Stress-ng</td>
+                        <td>RAM</td>
+                        <td>RAM usage will fill up to the limit we set (e.g. 90%).</td>
+                    </tr>
+                    <tr>
+                        <td>Sysbench (FileIO)</td>
+                        <td>Disk I/O</td>
+                        <td>CPU usage might be low, but "Load Average" will be high.</td>
+                    </tr>
+                    <tr>
+                        <td>iPerf3</td>
+                        <td>Network Card</td>
+                        <td>Network traffic on enp0s8 will spike to near 1Gbps (or higher depending on virtualization).
+                            CPU usage may rise slightly to process the network packets.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nginx</td>
+                        <td>Mixed</td>
+                        <td>Low idle usage. Moderate CPU and RAM spikes during requests.
+                            Logs will be generated in /var/log/nginx/.
+                        </td>
+                    </tr>
+                </table>
+
+
+            </div>
+            <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">Monitoring Strategy explaining measurement.</h2>
+                <br>
+                <p class="text-gray-600">For the controller I'll open one terminal on the Workstation SSH'd into the Server to run the stress command.
+                    While for the Monitor I'll open a second terminal on the Workstation SSH'd into the Server to watch the metrics.</p>
+                <br>
+                <table>
+                    <tr>
+                        <th>Workload</th>
+                        <th>Primary monitoring tool</th>
+                        <th>Metric to moitor.</th>
+                    </tr>
+                    <tr>
+                        <td>General / CPU</td>
+                        <td>Sysbench (CPU mode)</td>
+                        <td> Look at the colored bars at the top. Green = User processes. 
+                            Red = Kernel processes. Watch for the bars hitting 100%.</td>
+                    </tr>
+                    <tr>
+                        <td>Memory</td><td>htop or free -h</td><td>In htop, watch the Mem bar. 
+                            Watch the Swp bar to see if it spills over to disk. </td>
+                    </tr>
+                    <tr>
+                        <td>Disk I/O</td>
+                        <td>vmstat 1</td>
+                        <td>Run vmstat 1. Watch the wa column (Wait). 
+                            If this number is high, your disk is the bottleneck.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Network</td>
+                        <td>nload or ip -s link</td>
+                        <td>(Optional install: sudo apt install nload). 
+                            This shows a real-time graph of incoming/outgoing traffic speed.</td>
+                    </tr>
+                </table>
+            </div>
+
+            
+
+            <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">Critical reflection.</h2>
+                <br>
+                <p class="text-gray-600">The third phase is where I got confused alot as I didn't know alot about 
+                    workload types(CPU, FileIO, Network, etc). I also didn't know about  Application Selection Matrix. So,
+                    I had to use AI to help me understand what I needed to do. With the knowledge I had I was able to 
+                    create table that include information on wordload type and a installation documentation.I learn that
+                     we need to plan out for testing on both the Workstation VM and the Server VM.
+                </p>
+            </div>
+               
+            
+                        
+                    
+                
+
+                
+                
+                
+                
+                
+
+
                 
             
+                
 
             
 
@@ -185,11 +350,10 @@
     <!-- Footer -->
     <footer class="bg-slate-900 text-white py-8 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="mb-4">&copy; 2025 Linux Administration Project. All rights reserved.</p>
+            <p class="mb-4">&copy; 2025 Operating System Coursework. All rights reserved.</p>
             <div class="flex justify-center space-x-6">
-                <a href="#" class="text-gray-400 hover:text-white text-2xl transition"><i class="fa-brands fa-github"></i></a>
-                <a href="#" class="text-gray-400 hover:text-white text-2xl transition"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="mailto:email@example.com" class="text-gray-400 hover:text-white text-2xl transition"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://github.com/JM-Vincent?tab=overview&from=2025-12-01&to=2025-12-17" class="text-gray-400 hover:text-white text-2xl transition"><i class="fa-brands fa-github"></i></a>
+                
             </div>
         </div>
     </footer>
